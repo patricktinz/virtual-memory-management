@@ -3,19 +3,19 @@ CC = g++
 
 OBJ = Page.o PageTable.o  Statistics.o VirtualMemoryManager.o main.o
 
-# Name des Programms
+# program name
 TARGET = vmm
 
-FLAGS = -g -std=c++11 -Wall -MMD -fmessage-length=0
+FLAGS = -g -std=c++14 -Wall -MMD -fmessage-length=0
 
 all: $(TARGET)
 
-#special - "make clean" löscht alle *.o Dateien
+# "make clean" delete all *.o files
 clean:
-	rm -fv $(OBJ)
+	rm vmm $(OBJ)
 
 %.o : %.cpp
 	$(CC) -c $(FLAGS) -o $@ $<
 
 $(TARGET): $(OBJ)
-	$(CC) -o $(TARGET) $(OBJ) $(LIBS)
+	$(CC) -o $(TARGET) $(OBJ)
