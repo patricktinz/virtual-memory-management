@@ -130,7 +130,7 @@ void VirtualMemoryManager::readRam()
     st.incrementNumberOfRamRead();   
 }
 
-bool VirtualMemoryManager::mmu(Page actualPage, string operation)
+bool VirtualMemoryManager::mmu(Page actualPage, string operation)   // TODO: reverse page table
 {  
     int pageNumber = actualPage.getPageNumber();
     int pageFrame = tables[actualProcessNumber].getPageFrame(pageNumber);
